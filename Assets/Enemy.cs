@@ -2,30 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int health;
+    public TextMeshProUGUI enemyHealthUi;
+    GameController gameController;
+
+    private void Start()
     {
-        
+        enemyHealthUi.text = health.ToString();
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
+            int receivedDamage = collision.gameObject.GetComponent<Bullet>().bulletDamage;
+
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+
+            health -= receivedDamage;
+
+            enemyHealthUi.text = health.ToString();
+
+            if (health <= 0)
+            {
+                Debug.Log("Muere");
+
+                gameController.AddKill();
+                Destroy(gameObject);
+            }
 
         }
 
         
     }
+
+    
+
+    
+
 }

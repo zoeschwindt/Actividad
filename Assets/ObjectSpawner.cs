@@ -8,14 +8,14 @@ public class ObjectSpawner : MonoBehaviour
 
     public float bulletFoce;
 
-    
-    
 
-    void Start()
+    private void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
     }
-    
+
+
+
     // Update is called once per frame
     void Update()
     {
@@ -29,6 +29,11 @@ public class ObjectSpawner : MonoBehaviour
 
             Destroy(bulletClone, 2f);
             
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) 
+        {
+            Cursor.lockState = CursorLockMode.None;
         }
         
     }
