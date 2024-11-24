@@ -92,7 +92,7 @@ public class GameController : MonoBehaviour
     }
 
     // Método para cuando el temporizador llega a cero
-    void TimerFinished()
+    public void TimerFinished()
     {
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.Confined;
