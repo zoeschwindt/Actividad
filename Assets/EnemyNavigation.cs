@@ -35,7 +35,7 @@ public class EnemyNavigation : MonoBehaviour
             {
                 Agent.destination = player.position;
             }
-    }
+        }
         
 
     }

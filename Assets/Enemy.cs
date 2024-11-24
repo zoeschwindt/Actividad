@@ -16,9 +16,13 @@ public class Enemy : MonoBehaviour
     public float initialdelay;
     public float interval;
     [SerializeField] private float distancePlayerEnemy;
+    private Animator animator;
+
+
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         enemyHealthUi.text = health.ToString();
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 
@@ -28,13 +32,18 @@ public class Enemy : MonoBehaviour
         InvokeRepeating("SetDestination", initialdelay, interval);
 
     }
-
+    void Update()
+    {
+        animator.SetFloat("Speed", Agent.speed);
+    }
 
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
+            animator.SetBool("Stunned", true);
+
             int receivedDamage = collision.gameObject.GetComponent<Bullet>().bulletDamage;
 
             Destroy(collision.gameObject);
@@ -45,6 +54,7 @@ public class Enemy : MonoBehaviour
 
             if (health <= 0)
             {
+                //activar animacion de muere
                 Debug.Log("Muere");
 
                 gameController.AddKill();
@@ -70,12 +80,22 @@ public class Enemy : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, distancePlayerEnemy))
         {
+
             if (hit.collider.gameObject.CompareTag("Player"))
             {
                 Agent.destination = player.position;
+                
+                //activar animacion de corer
+
+
+
             }
         }
-
+        else
+        {
+            //activar animacion de idle
+        }
+        
 
     }
 
@@ -85,5 +105,6 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(gameObject.transform.position, distancePlayerEnemy);
 
     }
+
 
 }
