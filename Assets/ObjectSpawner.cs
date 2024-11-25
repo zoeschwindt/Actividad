@@ -19,7 +19,8 @@ public class ObjectSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (GameController.muerto == false) { 
+            if (Input.GetMouseButtonDown(0))
         {
           GameObject bulletClone = Instantiate(objectPrefab, transform.position, transform.rotation);
 
@@ -30,7 +31,7 @@ public class ObjectSpawner : MonoBehaviour
             Destroy(bulletClone, 2f);
             
         }
-
+           }
         if (Input.GetKeyDown(KeyCode.Escape)) 
         {
             Cursor.lockState = CursorLockMode.None;

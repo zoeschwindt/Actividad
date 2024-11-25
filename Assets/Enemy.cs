@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     public float interval;
     [SerializeField] private float distancePlayerEnemy;
     private Animator animator;
+    [SerializeField] private GameObject Sangre;
+
 
 
 
@@ -34,7 +36,15 @@ public class Enemy : MonoBehaviour
     }
     void Update()
     {
-        animator.SetFloat("Speed", Agent.speed);
+        if (GameController.muerto == false) 
+        { 
+            animator.SetFloat("Speed",Agent.velocity.magnitude);
+        }
+        else
+        {
+            animator.SetFloat("Speed", 0f);
+            Agent.isStopped = true;
+        }
     }
 
 
@@ -42,7 +52,13 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            animator.SetBool("Stunned", true);
+            animator.SetTrigger("Stunned");
+
+            GameObject sangreclone = Instantiate(Sangre,collision.transform.position, transform.rotation);
+
+            Destroy(sangreclone, 2f);
+
+
 
             int receivedDamage = collision.gameObject.GetComponent<Bullet>().bulletDamage;
 
@@ -54,7 +70,7 @@ public class Enemy : MonoBehaviour
 
             if (health <= 0)
             {
-                //activar animacion de muere
+                
                 Debug.Log("Muere");
 
                 gameController.AddKill();
@@ -64,8 +80,11 @@ public class Enemy : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
+
             Debug.Log("El enemigo tocó al jugador");
+            animator.SetTrigger("Grab");
             gameController.TimerFinished();
+
         }
 
         
@@ -73,6 +92,10 @@ public class Enemy : MonoBehaviour
 
     public void SetDestination()
     {
+        if (GameController.muerto == false)
+        {
+
+        
         float distancePlayer = Vector3.Distance(transform.position, player.position);
         Vector3 directionPlayer = (player.position - transform.position).normalized;
 
@@ -95,11 +118,12 @@ public class Enemy : MonoBehaviour
         {
             //activar animacion de idle
         }
-        
 
+         }
     }
 
-    private void OnDrawGizmos()
+
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(gameObject.transform.position, distancePlayerEnemy);

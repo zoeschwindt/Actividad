@@ -265,33 +265,93 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5c2b5593237219b47983facb3374b370, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5c2b5593237219b47983facb3374b370, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5c2b5593237219b47983facb3374b370, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5c2b5593237219b47983facb3374b370, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5c2b5593237219b47983facb3374b370, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 5c2b5593237219b47983facb3374b370, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 5c2b5593237219b47983facb3374b370, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 5c2b5593237219b47983facb3374b370, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 5c2b5593237219b47983facb3374b370, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 5c2b5593237219b47983facb3374b370, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6639681
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 5c2b5593237219b47983facb3374b370, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.6639682
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 5c2b5593237219b47983facb3374b370, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.24320015
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 5c2b5593237219b47983facb3374b370, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.24320011
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 5c2b5593237219b47983facb3374b370, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 5c2b5593237219b47983facb3374b370, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -40.234
+      objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 5c2b5593237219b47983facb3374b370, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5656209
+      value: -4.52732
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 5c2b5593237219b47983facb3374b370, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5014999
+      value: 0.501511
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 5c2b5593237219b47983facb3374b370, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.670031
+      value: 52.226013
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 5c2b5593237219b47983facb3374b370, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.69191605
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 5c2b5593237219b47983facb3374b370, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.0015572152
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 5c2b5593237219b47983facb3374b370, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.72197485
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 5c2b5593237219b47983facb3374b370, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.0014923824
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 5c2b5593237219b47983facb3374b370, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -299,16 +359,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 5c2b5593237219b47983facb3374b370, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -92.436
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 5c2b5593237219b47983facb3374b370, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -0.247
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 5c2b5593237219b47983facb3374b370, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 248f60469a8c5bd468af988848138245, type: 2}
+      objectReference: {fileID: 2100000, guid: 92a6952bf9a9550479ef4edab915c072, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -353,6 +413,7 @@ MonoBehaviour:
   initialdelay: 3
   interval: 0.2
   distancePlayerEnemy: 50
+  Sangre: {fileID: 1584178707596084254, guid: 658489be101e9844f83abad88cbf3dfe, type: 3}
 --- !u!136 &716220550763269088
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -386,10 +447,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 4.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 500
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -407,10 +468,10 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8056805569960000408}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 77a32863e7db71143ace465657f12120, type: 3}
   m_Controller: {fileID: 9100000, guid: 18a6c0fe4e27f5849873ecdbf01b6c59, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0

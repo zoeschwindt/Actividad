@@ -13,10 +13,7 @@ public class GameController : MonoBehaviour
     private int Kills;
     private int totalEnemies;
     [SerializeField] private GameObject panelfinjuego;
-
-    
-
-    
+    public static bool muerto = false;
     [SerializeField] private TextMeshProUGUI KillsText;
     [SerializeField] private TextMeshProUGUI winText;
     void Start()
@@ -48,7 +45,7 @@ public class GameController : MonoBehaviour
     private void Win()
     {
 
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.Confined;
         panelfinjuego.SetActive(true);
         winText.text = "YOU WIN";
@@ -94,7 +91,8 @@ public class GameController : MonoBehaviour
     // Método para cuando el temporizador llega a cero
     public void TimerFinished()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        muerto = true;
         Cursor.lockState = CursorLockMode.Confined;
         isTimerFinished = true;
         Debug.Log("¡El tiempo ha terminado!");
@@ -105,7 +103,8 @@ public class GameController : MonoBehaviour
     }
     public void MainMenu()
     {
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
+        muerto = false;
         SceneManager.LoadScene(0);
         
     }

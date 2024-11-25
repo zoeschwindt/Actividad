@@ -26,7 +26,11 @@ public class CameralLook : MonoBehaviour
    
     void Update()
     {
-        mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+        if (GameController.muerto == false)
+        {
+
+        
+            mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
 
         mouseInput = Vector2.Scale(mouseInput, new Vector2(sensibility * smooth, sensibility * smooth));
 
@@ -43,6 +47,6 @@ public class CameralLook : MonoBehaviour
         player.transform.localRotation = Quaternion.Euler(0f, rotationY, 0f);
 
 
-
+             }
     }
 }

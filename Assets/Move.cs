@@ -15,12 +15,16 @@ public class Move : MonoBehaviour
     
     void Update()
     {
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        if (GameController.muerto == false)
+        {
+
+        
+         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         Vector3 moveRelative = transform.TransformDirection(move) * playerSpeed * Time.deltaTime;
 
         rb.MovePosition(rb.position + moveRelative);
-
+        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
