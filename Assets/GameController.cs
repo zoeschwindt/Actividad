@@ -44,8 +44,9 @@ public class GameController : MonoBehaviour
 
     private void Win()
     {
-
+        isTimerFinished = true;
         //Time.timeScale = 0;
+        muerto = true;
         Cursor.lockState = CursorLockMode.Confined;
         panelfinjuego.SetActive(true);
         winText.text = "YOU WIN";
@@ -69,7 +70,7 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        if (!isTimerFinished)
+            if (!isTimerFinished)
         {
             // Decrementa el tiempo
             currentTime -= Time.deltaTime;

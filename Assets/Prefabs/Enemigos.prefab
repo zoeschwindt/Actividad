@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f96993b28b41f41a4b05bb40de015b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 6
+  health: 3
   enemyHealthUi: {fileID: 5791629231102025111}
   Agent: {fileID: 0}
   player: {fileID: 0}
