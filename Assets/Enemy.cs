@@ -18,6 +18,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float distancePlayerEnemy;
     private Animator animator;
     [SerializeField] private GameObject Sangre;
+    public float defaultVelocity;
+    public float slowVelocity;
+
 
 
 
@@ -57,6 +60,12 @@ public class Enemy : MonoBehaviour
             GameObject sangreclone = Instantiate(Sangre,collision.transform.position, transform.rotation);
 
             Destroy(sangreclone, 2f);
+
+            Agent.speed = slowVelocity;
+
+            StartCoroutine(VelocidadNormal());
+
+
 
 
 
@@ -127,6 +136,15 @@ public class Enemy : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(gameObject.transform.position, distancePlayerEnemy);
+
+    }
+
+    private IEnumerator VelocidadNormal()
+    {
+        yield return new WaitForSeconds(2);
+
+       Agent.speed = defaultVelocity;
+
 
     }
 

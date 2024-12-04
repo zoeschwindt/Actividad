@@ -12,6 +12,8 @@ public class EnemyNavigation : MonoBehaviour
     public Transform player;
     public float initialdelay;
     public float interval;
+   
+
     [SerializeField] private float distancePlayerEnemy;
     void Start()
     {
