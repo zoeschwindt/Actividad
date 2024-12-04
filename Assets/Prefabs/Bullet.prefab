@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3173294445231260407}
   - component: {fileID: -8690858201094215987}
   - component: {fileID: -8774488961966597542}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -159,6 +159,10 @@ PrefabInstance:
     - target: {fileID: 7150898924961603278, guid: 19bfd6046120b6d4eb8b0846e7b34bcc, type: 3}
       propertyPath: m_Name
       value: BulletTrail
+      objectReference: {fileID: 0}
+    - target: {fileID: 7150898924961603278, guid: 19bfd6046120b6d4eb8b0846e7b34bcc, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7674871991460320103, guid: 19bfd6046120b6d4eb8b0846e7b34bcc, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b

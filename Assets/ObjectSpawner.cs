@@ -15,7 +15,7 @@ public class ObjectSpawner : MonoBehaviour
     public Transform weaponTransform;
     public RectTransform crosshairUI;
     public Canvas canvas;
-
+    public LayerMask layerMask;
 
 
 
@@ -58,26 +58,28 @@ public class ObjectSpawner : MonoBehaviour
     }
     void PositionCrosshair()
     {
-        Ray ray = new Ray(weaponTransform.position, weaponTransform.forward);
-        RaycastHit hit;
-
+        Ray ray = new Ray(weaponTransform.position, weaponTransform.up);
         Vector3 targetPoint;
 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, layerMask))
         {
+            // Si el raycast golpea algo, usa ese punto
             targetPoint = hit.point;
         }
         else
         {
-            targetPoint = ray.origin + ray.direction * raycastDistance;
+            // Si no golpea nada, calcula un punto en la distancia máxima
+            targetPoint = ray.GetPoint(raycastDistance);
         }
 
+        // Convierte el punto del mundo a coordenadas de pantalla
         Vector3 screenPoint = mainCamera.WorldToScreenPoint(targetPoint);
 
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.GetComponent<RectTransform>(), screenPoint, mainCamera, out Vector2 canvasPoint);
+        // Actualiza la posición de la retícula en la UI
+        crosshairUI.position = screenPoint;
 
-        crosshairUI.anchoredPosition = canvasPoint;
-
+        // Opcional: desactiva la retícula si el objetivo está fuera de la vista
+        crosshairUI.gameObject.SetActive(screenPoint.z > 0);
 
     }
 

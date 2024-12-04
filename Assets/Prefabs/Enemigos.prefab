@@ -415,7 +415,7 @@ MonoBehaviour:
   distancePlayerEnemy: 50
   Sangre: {fileID: 1584178707596084254, guid: 658489be101e9844f83abad88cbf3dfe, type: 3}
   defaultVelocity: 4.5
-  slowVelocity: 1.5
+  slowVelocity: 0.5
 --- !u!136 &716220550763269088
 CapsuleCollider:
   m_ObjectHideFlags: 0
